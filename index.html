@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arkiva Dokumente</title>
+<meta name="description" content="Arkiva keeps a family's documents encrypted on the iPhone, searchable in Albanian and readable only by the family.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    --bg: #ffffff; --surface: #f4f6fa; --text: #16181d; --muted: #5a6170;
+    --line: #dde2ea; --accent: #1761C7; --link: #1761C7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101215; --surface: #1a1d22; --text: #eceef2; --muted: #a2a9b6;
+      --line: #2c3139; --accent: #1761C7; --link: #7fb0ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main, header, footer { max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+  header { padding-top: 2.5rem; }
+  .brand { display: flex; align-items: center; gap: .75rem; }
+  .mark { width: 2.75rem; height: 2.75rem; border-radius: .7rem; background: var(--accent); display: grid; place-items: center; flex: none; }
+  .mark svg { width: 1.5rem; height: 1.5rem; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0; }
+  h2 { font-size: 1.3rem; margin: 2rem 0 .5rem; }
+  .lead { font-size: 1.15rem; color: var(--muted); margin: 1rem 0 0; }
+  a { color: var(--link); }
+  ul { padding-left: 1.2rem; }
+  li { margin: .3rem 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  .links { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+  .button { display: inline-block; padding: .6rem 1.1rem; border-radius: .7rem; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; }
+  .button.secondary { background: transparent; color: var(--link); border: 1px solid var(--line); }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+  footer { color: var(--muted); font-size: .9rem; padding-bottom: 2.5rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+    </div>
+    <h1>Arkiva Dokumente</h1>
+  </div>
+  <p class="lead">Your family's documents, encrypted on your iPhone, searchable in Albanian, readable only by your family.</p>
+</header>
+
+<main>
+  <div class="links">
+    <a class="button" href="privacy.html">Privacy policy</a>
+    <a class="button secondary" href="support.html">Support and questions</a>
+  </div>
+
+  <h2>What Arkiva is</h2>
+  <p>Arkiva keeps a family's papers in one private place on the iPhone: ID cards and passports, bills, bank letters, contracts, medical records, school certificates. Scan them with the camera, or add them from Photos and Files, and find any of them later by any word in them. The app speaks Albanian and English (it follows the iPhone's language) and is made for Albanian documents.</p>
+  <ul>
+    <li><strong>Encrypted on the phone.</strong> Every document is encrypted (AES-256-GCM) before it is saved. The key lives in the iPhone's Secure Enclave and opens only with Face ID or the device passcode.</li>
+    <li><strong>Read on the phone.</strong> Text is recognised on the device with Apple's text recognition. Search ignores ë and ç, understands Albanian word endings and forgives small typos.</li>
+    <li><strong>Organised.</strong> Multi-page documents, family members tagged automatically, categories, and a trash that keeps deleted documents for 30 days.</li>
+    <li><strong>Recoverable.</strong> A 24-word recovery phrase on paper, and an encrypted backup file you can restore on a new phone.</li>
+    <li><strong>For the whole family.</strong> Family phones join by scanning a QR code on a phone that is already in the family.</li>
+    <li><strong>Nothing collected.</strong> No accounts, no servers, no ads, no analytics, no tracking. The developer never receives your documents. Free.</li>
+  </ul>
+
+  <div class="card">
+    <strong>Keep the 24 words safe.</strong> If the recovery phrase is lost and no family phone can open the archive any more, nobody can open the documents again, not even the developer.
+  </div>
+
+  <hr>
+
+  <section lang="sq">
+    <h2>Çfarë është Arkiva</h2>
+    <p>Arkiva mban letrat e familjes në një vend të sigurt në iPhone: letërnjoftime, pasaporta, fatura, kontrata, dokumente banke dhe shëndetësie. Skano me kamerën ose shto nga Fotot dhe Skedarët, dhe gjej çdo dokument me çdo fjalë që përmban. Çdo dokument enkriptohet në telefon dhe hapet vetëm me Face ID ose me kodin e telefonit. Pa llogari, pa reklama, pa gjurmim, falas.</p>
+    <div class="links">
+      <a class="button" href="privacy.html#sq">Politika e privatësisë</a>
+      <a class="button secondary" href="support.html#sq">Ndihmë dhe pyetje</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <hr>
+  <p>Arkiva Dokumente · © 2026 Silvester Cekodhima · <a href="mailto:silvestercekodhima@gmail.com">silvestercekodhima@gmail.com</a></p>
+  <p>This site uses no cookies, no scripts and no trackers. · Kjo faqe nuk përdor cookies, skripte apo gjurmues.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arkiva Support</title>
+<meta name="description" content="Questions and answers for Arkiva Dokumente: recovery phrase, lost phone, family phones, backups, iCloud. In English and Albanian.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    --bg: #ffffff; --surface: #f4f6fa; --text: #16181d; --muted: #5a6170;
+    --line: #dde2ea; --accent: #1761C7; --link: #1761C7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101215; --surface: #1a1d22; --text: #eceef2; --muted: #a2a9b6;
+      --line: #2c3139; --accent: #1761C7; --link: #7fb0ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main, header, footer { max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+  header { padding-top: 2rem; }
+  nav { font-size: .95rem; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 1rem 0 .25rem; }
+  .meta { color: var(--muted); margin: 0 0 1rem; }
+  a { color: var(--link); overflow-wrap: anywhere; }
+  ol, ul { padding-left: 1.3rem; }
+  li { margin: .3rem 0; }
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: .8rem; margin: .75rem 0; padding: 0 1.1rem; }
+  details[open] { padding-bottom: .6rem; }
+  summary { cursor: pointer; font-weight: 600; padding: .85rem 0; list-style-position: outside; }
+  summary::marker { color: var(--accent); }
+  .card { border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: .8rem; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  .lang { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1rem 0; }
+  .lang a { padding: .35rem .8rem; border: 1px solid var(--line); border-radius: 2rem; text-decoration: none; }
+  q { font-style: normal; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 3rem 0; }
+  footer { color: var(--muted); font-size: .9rem; padding-bottom: 2.5rem; }
+</style>
+</head>
+<body>
+<header>
+  <nav><a href="index.html">Arkiva Dokumente</a> · <a href="privacy.html">Privacy</a></nav>
+  <div class="lang"><a href="#en">English</a><a href="#sq">Shqip</a></div>
+</header>
+
+<main>
+<section id="en">
+  <h1>Support</h1>
+  <p class="meta">Arkiva Dokumente for iPhone. The app follows the iPhone's language (Albanian or English); Albanian button names are given in quotes, with a translation.</p>
+
+  <details open>
+    <summary>I lost the paper with the 24 words</summary>
+    <p>If a phone can still open the archive, you can fix this:</p>
+    <ul>
+      <li>Open Cilësimet (Settings) → <q>Shfaq frazën e rikthimit</q> (Show the recovery phrase). After Face ID or the passcode the same 24 words appear. Write them on paper again.</li>
+      <li>If that phone does not keep the phrase, or you think someone else saw the old paper, choose <q>Frazë e re rikthimi</q> (New recovery phrase) and write down the new words. The old words no longer open new backups, so make a new backup right after.</li>
+    </ul>
+    <p>If the 24 words are lost <strong>and</strong> no family phone can open the archive any more, nobody can open the documents again, not even the developer. A backup file also needs the 24 words. There is no reset and no back door.</p>
+  </details>
+
+  <details>
+    <summary>I lost my phone, or it was stolen</summary>
+    <ol>
+      <li>On another family phone that is an administrator: Cilësimet → <q>Pajisjet e familjes</q> (Family devices) → remove the lost phone. The archive key is changed, and the lost phone cannot read anything added afterwards. With iCloud the other phones receive the new key on their own. Without iCloud, the administrator's phone shows a new code for each remaining phone (<q>Kodet e reja</q>); scan it on each of them.</li>
+      <li>Use Apple's <strong>Find My → Erase</strong> on the lost phone.</li>
+      <li>On the new phone, either join the family again with a QR code (see below), or restore a backup file with the 24 words.</li>
+    </ol>
+    <p>If the lost phone was the <strong>only</strong> phone: on the new phone, open Arkiva → <q>Rikthe nga kopja rezervë</q> (Restore from backup), choose your .arkb file and type the 24 words. Documents that existed only on the lost phone and were never in a backup cannot be recovered.</p>
+    <p>Anything the lost phone already had is protected by its passcode, Face ID and the Secure Enclave. Someone who can unlock that phone could see what it had until you remove it.</p>
+  </details>
+
+  <details>
+    <summary>How do I add a family member's phone?</summary>
+    <ol>
+      <li>On the new phone: install Arkiva, open it and tap <q>Bashkohu me familjen</q> (Join the family). A QR code appears.</li>
+      <li>On a phone that is already in the family (an administrator): Cilësimet → <q>Pajisjet e familjes</q> → <q>Shto pajisje</q> (Add device), and scan the code.</li>
+      <li>A reply code appears. Scan it with the new phone, or send it as text. It is encrypted and only the new phone can use it.</li>
+    </ol>
+    <p>Both phones need to be in the same room for the first scan. That is what makes sure no one else can join.</p>
+  </details>
+
+  <details>
+    <summary>How do I make a backup, and how do I restore it?</summary>
+    <ul>
+      <li><strong>Backup:</strong> Cilësimet → <q>Kopja rezervë</q> → <q>Krijo kopjen rezervë</q>. Save the .arkb file to an external drive or to Files. It is encrypted and opens only with the 24 words. Do it once a month, or after adding a batch of documents.</li>
+      <li><strong>Restore on a new phone:</strong> open Arkiva → <q>Rikthe nga kopja rezervë</q>, choose the file and type the 24 words. The words are checked before anything is written.</li>
+      <li>After a restore, that phone becomes the archive's only administrator and the key is changed. Add the other family phones again with their QR codes.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>My new iPhone asks for the 24 words</summary>
+    <p>This happens after moving to a new iPhone from an iPhone backup or transfer. The archive was copied, but the key that opens it never leaves the old phone's Secure Enclave. Choose <q>Rikthe me frazën</q> (Restore with the phrase) and type the 24 words; Arkiva opens the archive with a new key for this phone.</p>
+  </details>
+
+  <details>
+    <summary>Does Arkiva sync with iCloud?</summary>
+    <p>Yes, when the iPhone is signed in to iCloud. Phones on the same Apple ID sync on their own. For a family member with their own Apple ID, the person who created the archive sends an invitation from Cilësimet → iCloud ("Invite someone with another Apple ID"); the family member opens it on their iPhone, and an administrator adds their phone under Family devices with the QR code. iCloud stores only encrypted data: neither Apple nor the developer can read it. Without iCloud, Arkiva works fully on each phone and documents move between phones with the backup file.</p>
+  </details>
+
+  <details>
+    <summary>Is my data sent anywhere?</summary>
+    <p>No. Text is read on the phone, documents are encrypted on the phone, and the developer has no server. See the <a href="privacy.html">privacy policy</a>.</p>
+  </details>
+
+  <div class="card">
+    <strong>Contact:</strong> <a href="mailto:silvestercekodhima@gmail.com">silvestercekodhima@gmail.com</a><br>
+    Describe what happened and which iPhone and iOS version you have. If something went wrong, you can attach the report from Cilësimet → Diagnostika → <q>Dërgoje raportin</q>; it contains no document text, names or keys. <strong>Never send documents or your 24 words.</strong> We cannot open your archive and will never ask for them.
+  </div>
+</section>
+
+<hr>
+
+<section id="sq" lang="sq">
+  <h1>Ndihmë</h1>
+  <p class="meta">Arkiva Dokumente për iPhone. Udhëzuesi i plotë është edhe në aplikacion, te Cilësimet → Ndihmë.</p>
+
+  <details open>
+    <summary>Humba letrën me 24 fjalët</summary>
+    <p>Nëse një telefon e hap ende arkivën, rregullohet:</p>
+    <ul>
+      <li>Hap Cilësimet → <q>Shfaq frazën e rikthimit</q>. Pas Face ID ose kodit shfaqen të njëjtat 24 fjalë. Shkruaji përsëri në letër.</li>
+      <li>Nëse ai telefon nuk e ruan frazën, ose mendon se dikush tjetër e ka parë letrën e vjetër, zgjidh <q>Frazë e re rikthimi</q> dhe shkruaj fjalët e reja. Fjalët e vjetra nuk hapin më kopjet e reja rezervë, ndaj bëj menjëherë një kopje rezervë të re.</li>
+    </ul>
+    <p>Nëse humbasin 24 fjalët <strong>dhe</strong> asnjë telefon i familjes nuk e hap më arkivën, dokumentet nuk i hap dot më askush, as zhvilluesi. Edhe kopja rezervë ka nevojë për 24 fjalët. Nuk ka rivendosje dhe nuk ka derë të fshehtë.</p>
+  </details>
+
+  <details>
+    <summary>Humba telefonin ose ma vodhën</summary>
+    <ol>
+      <li>Në një telefon tjetër të familjes që është administrator: Cilësimet → <q>Pajisjet e familjes</q> → hiq telefonin e humbur. Çelësi i arkivës ndërrohet dhe telefoni i humbur nuk lexon dot asgjë që shtohet më pas. Me iCloud telefonat e tjerë e marrin çelësin e ri vetë. Pa iCloud, telefoni i administratorit shfaq një kod të ri për çdo telefon tjetër (<q>Kodet e reja</q>); skanoje në secilin prej tyre.</li>
+      <li>Përdor <strong>Find My → Erase</strong> të Apple-it për telefonin e humbur.</li>
+      <li>Në telefonin e ri, ose bashkohu përsëri me familjen me kodin QR (shih më poshtë), ose rikthe një kopje rezervë me 24 fjalët.</li>
+    </ol>
+    <p>Nëse telefoni i humbur ishte i <strong>vetmi</strong>: në telefonin e ri hap Arkivën → <q>Rikthe nga kopja rezervë</q>, zgjidh skedarin .arkb dhe shkruaj 24 fjalët. Dokumentet që ishin vetëm në telefonin e humbur dhe nuk u futën kurrë në një kopje rezervë nuk rikthehen dot.</p>
+    <p>Atë që kishte tashmë telefoni i humbur e mbrojnë kodi i tij, Face ID dhe Secure Enclave. Kush arrin ta hapë atë telefon mund të shohë çfarë kishte, derisa ta heqësh.</p>
+  </details>
+
+  <details>
+    <summary>Si shtoj telefonin e një anëtari të familjes?</summary>
+    <ol>
+      <li>Në telefonin e ri: instalo Arkivën, hape dhe shtyp <q>Bashkohu me familjen</q>. Shfaqet një kod QR.</li>
+      <li>Në një telefon që është tashmë në familje (administrator): Cilësimet → <q>Pajisjet e familjes</q> → <q>Shto pajisje</q>, dhe skano kodin.</li>
+      <li>Shfaqet një kod përgjigjeje. Skanoje me telefonin e ri, ose dërgoje si tekst. Është i enkriptuar dhe e përdor vetëm telefoni i ri.</li>
+    </ol>
+    <p>Për skanimin e parë të dy telefonat duhet të jenë në të njëjtën dhomë. Kjo siguron që askush tjetër nuk bashkohet dot.</p>
+  </details>
+
+  <details>
+    <summary>Si bëj një kopje rezervë dhe si e rikthej?</summary>
+    <ul>
+      <li><strong>Kopja rezervë:</strong> Cilësimet → <q>Kopja rezervë</q> → <q>Krijo kopjen rezervë</q>. Ruaje skedarin .arkb në një disk të jashtëm ose te Skedarët. Është i enkriptuar dhe hapet vetëm me 24 fjalët. Bëje një herë në muaj, ose pas çdo grumbulli dokumentesh.</li>
+      <li><strong>Rikthimi në një telefon të ri:</strong> hap Arkivën → <q>Rikthe nga kopja rezervë</q>, zgjidh skedarin dhe shkruaj 24 fjalët. Fjalët kontrollohen përpara se të shkruhet ndonjë gjë.</li>
+      <li>Pas rikthimit, ai telefon bëhet i vetmi administrator i arkivës dhe çelësi ndërrohet. Shto përsëri telefonat e tjerë të familjes me kodet e tyre QR.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>iPhone-i i ri më kërkon 24 fjalët</summary>
+    <p>Kjo ndodh pasi kalon në një iPhone të ri nga një kopje e iPhone-it ose me transferim. Arkiva u kopjua, por çelësi që e hap nuk del kurrë nga Secure Enclave e telefonit të vjetër. Zgjidh <q>Rikthe me frazën</q> dhe shkruaj 24 fjalët; Arkiva e hap arkivën me një çelës të ri për këtë telefon.</p>
+  </details>
+
+  <details>
+    <summary>A sinkronizohet Arkiva me iCloud?</summary>
+    <p>Po, kur iPhone-i është i futur në iCloud. Telefonat me të njëjtin Apple ID sinkronizohen vetë. Për një anëtar me Apple ID tjetër, ai që e krijoi arkivën dërgon një ftesë nga Cilësimet → iCloud („Fto një anëtar me Apple ID tjetër”); anëtari e hap ftesën në iPhone-in e vet, dhe një administrator e shton telefonin e tij te Pajisjet e familjes me kodin QR. Në iCloud ruhen vetëm të dhëna të enkriptuara: as Apple, as zhvilluesi nuk i lexojnë dot. Pa iCloud, Arkiva punon plotësisht në çdo telefon dhe dokumentet kalojnë nga një telefon në tjetrin me kopjen rezervë.</p>
+  </details>
+
+  <details>
+    <summary>A dërgohen të dhënat e mia diku?</summary>
+    <p>Jo. Teksti lexohet në telefon, dokumentet enkriptohen në telefon dhe zhvilluesi nuk ka server. Shih <a href="privacy.html#sq">politikën e privatësisë</a>.</p>
+  </details>
+
+  <div class="card">
+    <strong>Kontakt:</strong> <a href="mailto:silvestercekodhima@gmail.com">silvestercekodhima@gmail.com</a><br>
+    Trego çfarë ndodhi dhe çfarë iPhone e versioni iOS ke. Nëse diçka nuk shkoi mirë, mund të bashkëngjitësh raportin nga Cilësimet → Diagnostika → <q>Dërgoje raportin</q>; nuk përmban tekst dokumentesh, emra apo çelësa. <strong>Mos dërgo kurrë dokumente apo 24 fjalët e tua.</strong> Ne nuk e hapim dot arkivën tënde dhe nuk do t'i kërkojmë kurrë.
+  </div>
+</section>
+</main>
+
+<footer>
+  <hr>
+  <p>Arkiva Dokumente · © 2026 Silvester Cekodhima · <a href="mailto:silvestercekodhima@gmail.com">silvestercekodhima@gmail.com</a></p>
+</footer>
+</body>
+</html>
